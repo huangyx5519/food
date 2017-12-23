@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58027AB51FEA1418000F7AE7 /* CreatFoodReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58027AB41FEA1418000F7AE7 /* CreatFoodReviewViewController.swift */; };
 		58B492361FE010E800E08E14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B492351FE010E800E08E14 /* AppDelegate.swift */; };
 		58B492381FE010E800E08E14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B492371FE010E800E08E14 /* ViewController.swift */; };
 		58B4923B1FE010E800E08E14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B492391FE010E800E08E14 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58027AB41FEA1418000F7AE7 /* CreatFoodReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatFoodReviewViewController.swift; sourceTree = "<group>"; };
 		58B492321FE010E800E08E14 /* food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = food.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B492351FE010E800E08E14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B492371FE010E800E08E14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				58B492351FE010E800E08E14 /* AppDelegate.swift */,
+				58027AB41FEA1418000F7AE7 /* CreatFoodReviewViewController.swift */,
 				58B492371FE010E800E08E14 /* ViewController.swift */,
 				58B492391FE010E800E08E14 /* Main.storyboard */,
 				58B4923C1FE010E800E08E14 /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 			files = (
 				58B492381FE010E800E08E14 /* ViewController.swift in Sources */,
 				58B492361FE010E800E08E14 /* AppDelegate.swift in Sources */,
+				58027AB51FEA1418000F7AE7 /* CreatFoodReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
