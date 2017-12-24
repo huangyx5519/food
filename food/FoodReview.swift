@@ -22,10 +22,10 @@ class FoodReview {
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int,desc: String, userName: String) {
+    init?(title: String, photo: UIImage?, rating: Int,desc: String, userName: String) {
         
         // The name must not be empty
-        guard !name.isEmpty else {
+        guard !title.isEmpty else {
             return nil
         }
         
@@ -35,7 +35,7 @@ class FoodReview {
         }
         
         // Initialize stored properties.
-        self.title = name
+        self.title = title
         self.photo = photo
         self.rating = rating
         self.desc = desc

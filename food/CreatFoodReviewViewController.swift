@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import os.log
 
 class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     //MARK: Properties
 
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    @IBOutlet weak var titleText: UITextField!
+    
+    @IBOutlet weak var descText: UITextField!
+    
+    @IBOutlet weak var RatingControl: RatingControl!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -26,15 +35,34 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let title = titleText.text ?? ""
+        let photo = photoImageView.image
+        let rating = RatingControl.rating
+        let desc = descText.text ?? ""
+        let userName = "haung"
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+//        meal = Meal(name: name, photo: photo, rating: rating)
+        
+        guard let food1 = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName ) else {
+            fatalError("Unable to instantiate meal1")
+        }
     }
-    */
+    
     
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

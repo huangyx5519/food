@@ -114,7 +114,7 @@ class FoodReviewTableViewController: UITableViewController {
         print("a")
         let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
         
-        guard let food1 = FoodReview(name: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
+        guard let food1 = FoodReview( title: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
             fatalError("Unable to instantiate meal1")
         }
         
