@@ -10,6 +10,7 @@
 		585B8E731FEE1B4800589ED8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585B8E721FEE1B4800589ED8 /* RatingControl.swift */; };
 		586D4B841FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D4B831FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift */; };
 		586D4B861FEFA704007C3F6D /* ShowFoodReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */; };
+		586D4B881FEFC64A007C3F6D /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D4B871FEFC64A007C3F6D /* CommentViewController.swift */; };
 		5879FFCF1FEF3D010076B532 /* FoodReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879FFCE1FEF3D010076B532 /* FoodReview.swift */; };
 		5879FFD11FEF3F510076B532 /* FoodReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */; };
 		5879FFD31FEF45860076B532 /* FoodReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */; };
@@ -20,6 +21,8 @@
 		58B492401FE010E800E08E14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B4923E1FE010E800E08E14 /* LaunchScreen.storyboard */; };
 		58B4924B1FE010E800E08E14 /* foodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4924A1FE010E800E08E14 /* foodTests.swift */; };
 		58B492561FE010E800E08E14 /* foodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B492551FE010E800E08E14 /* foodUITests.swift */; };
+		58E3F1DC1FEFCAFB00071464 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DB1FEFCAFB00071464 /* CommentTableViewCell.swift */; };
+		58E3F1DE1FEFCF8F00071464 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,7 @@
 		585B8E721FEE1B4800589ED8 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		586D4B831FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatFoodReviewViewController.swift; sourceTree = "<group>"; };
 		586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFoodReviewViewController.swift; sourceTree = "<group>"; };
+		586D4B871FEFC64A007C3F6D /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		5879FFCE1FEF3D010076B532 /* FoodReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReview.swift; sourceTree = "<group>"; };
 		5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReviewTableViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		58B492511FE010E800E08E14 /* foodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B492551FE010E800E08E14 /* foodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodUITests.swift; sourceTree = "<group>"; };
 		58B492571FE010E800E08E14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58E3F1DB1FEFCAFB00071464 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +120,12 @@
 				5879FFCE1FEF3D010076B532 /* FoodReview.swift */,
 				58B492371FE010E800E08E14 /* ViewController.swift */,
 				58B492391FE010E800E08E14 /* Main.storyboard */,
+				586D4B871FEFC64A007C3F6D /* CommentViewController.swift */,
 				5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */,
 				586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */,
 				5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */,
+				58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */,
+				58E3F1DB1FEFCAFB00071464 /* CommentTableViewCell.swift */,
 				585B8E721FEE1B4800589ED8 /* RatingControl.swift */,
 				58B4923C1FE010E800E08E14 /* Assets.xcassets */,
 				58B4923E1FE010E800E08E14 /* LaunchScreen.storyboard */,
@@ -284,7 +293,10 @@
 				58B492361FE010E800E08E14 /* AppDelegate.swift in Sources */,
 				5879FFCF1FEF3D010076B532 /* FoodReview.swift in Sources */,
 				5879FFD31FEF45860076B532 /* FoodReviewTableViewController.swift in Sources */,
+				58E3F1DE1FEFCF8F00071464 /* CommentTableViewController.swift in Sources */,
+				58E3F1DC1FEFCAFB00071464 /* CommentTableViewCell.swift in Sources */,
 				5879FFD11FEF3F510076B532 /* FoodReviewTableViewCell.swift in Sources */,
+				586D4B881FEFC64A007C3F6D /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

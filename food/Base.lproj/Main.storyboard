@@ -380,8 +380,8 @@
                                             <constraint firstAttribute="width" secondItem="KVG-dG-xJk" secondAttribute="height" multiplier="383:243" id="lHr-J1-bI3"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMj-cZ-g6b">
-                                        <rect key="frame" x="0.0" y="242" width="375" height="178"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMj-cZ-g6b">
+                                        <rect key="frame" x="0.0" y="242" width="375" height="283"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食物名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTe-PZ-37S">
                                                 <rect key="frame" x="16" y="20" width="86" height="26"/>
@@ -392,8 +392,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-v3-kur">
-                                                <rect key="frame" x="16" y="67" width="343" height="82"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述食物描述" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-v3-kur">
+                                                <rect key="frame" x="16" y="67" width="343" height="196"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -405,7 +405,6 @@
                                             <constraint firstAttribute="height" constant="178" id="Unf-gH-uPb"/>
                                             <constraint firstItem="MTe-PZ-37S" firstAttribute="top" secondItem="oMj-cZ-g6b" secondAttribute="top" constant="20" id="VNx-Ow-UOO"/>
                                             <constraint firstItem="MTe-PZ-37S" firstAttribute="leading" secondItem="oMj-cZ-g6b" secondAttribute="leading" constant="16" id="X6a-a0-aHJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="MXK-v3-kur" secondAttribute="bottom" constant="29" id="cxd-FO-3IN"/>
                                             <constraint firstItem="MTe-PZ-37S" firstAttribute="leading" secondItem="MXK-v3-kur" secondAttribute="leading" id="ek4-TZ-FKj"/>
                                             <constraint firstItem="MXK-v3-kur" firstAttribute="leading" secondItem="oMj-cZ-g6b" secondAttribute="leading" constant="16" id="j1V-Sl-iJJ"/>
                                             <constraint firstItem="MXK-v3-kur" firstAttribute="centerX" secondItem="oMj-cZ-g6b" secondAttribute="centerX" id="rJL-CP-8fF"/>
@@ -427,7 +426,7 @@
                                             <constraint firstAttribute="width" constant="86" id="Jwa-6N-psM"/>
                                         </constraints>
                                         <inset key="contentEdgeInsets" minX="18" minY="12" maxX="18" maxY="12"/>
-                                        <state key="normal" title="去评价">
+                                        <state key="normal" title="评价">
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -475,7 +474,7 @@
         <!--评论-->
         <scene sceneID="uKl-ye-eti">
             <objects>
-                <viewController id="4rH-P8-foj" sceneMemberID="viewController">
+                <viewController id="4rH-P8-foj" customClass="CommentTableViewController" customModule="food" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Knp-gj-zNI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -499,7 +498,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVb-5t-KU2">
-                                <rect key="frame" x="7" y="627" width="277" height="30"/>
+                                <rect key="frame" x="7" y="629" width="277" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -517,6 +516,40 @@
                                 <rect key="frame" x="0.0" y="170" width="375" height="446"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentTableViewCell" rowHeight="95" id="qMu-lz-9vV" customClass="CommentTableViewCell" customModule="food" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qMu-lz-9vV" id="apu-xR-aOJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="ic_person" translatesAutoresizingMaskIntoConstraints="NO" id="9Xo-uP-LhS">
+                                                    <rect key="frame" x="17" y="11" width="24" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="评论评论评论评论评论评论评论评论评论评论评论" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlG-Zl-Tc4">
+                                                    <rect key="frame" x="17" y="37" width="345" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfm-ys-UKC">
+                                                    <rect key="frame" x="49" y="13" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentText" destination="FlG-Zl-Tc4" id="S3l-sd-zBd"/>
+                                            <outlet property="userNameText" destination="vfm-ys-UKC" id="j1D-hw-eIh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
