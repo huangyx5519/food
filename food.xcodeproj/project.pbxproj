@@ -24,6 +24,11 @@
 		58E3F1DC1FEFCAFB00071464 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DB1FEFCAFB00071464 /* CommentTableViewCell.swift */; };
 		58E3F1DE1FEFCF8F00071464 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */; };
 		58E3F1E01FEFD0F100071464 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DF1FEFD0F100071464 /* Comment.swift */; };
+		58E3F1EE1FF0053800071464 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1ED1FF0053800071464 /* settingViewController.swift */; };
+		58E3F1F01FF0056E00071464 /* SharedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1EF1FF0056E00071464 /* SharedTableViewController.swift */; };
+		58E3F1F21FF0058200071464 /* CommentedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F11FF0058200071464 /* CommentedTableViewController.swift */; };
+		58E3F1F41FF0059B00071464 /* SharedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F31FF0059B00071464 /* SharedTableViewCell.swift */; };
+		58E3F1F61FF005AD00071464 /* CommentedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F51FF005AD00071464 /* CommentedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +72,11 @@
 		58E3F1DB1FEFCAFB00071464 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
 		58E3F1DF1FEFD0F100071464 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		58E3F1ED1FF0053800071464 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		58E3F1EF1FF0056E00071464 /* SharedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTableViewController.swift; sourceTree = "<group>"; };
+		58E3F1F11FF0058200071464 /* CommentedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentedTableViewController.swift; sourceTree = "<group>"; };
+		58E3F1F31FF0059B00071464 /* SharedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTableViewCell.swift; sourceTree = "<group>"; };
+		58E3F1F51FF005AD00071464 /* CommentedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 				58B492391FE010E800E08E14 /* Main.storyboard */,
 				5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */,
 				586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */,
+				58E3F1ED1FF0053800071464 /* settingViewController.swift */,
 				5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */,
 				586D4B871FEFC64A007C3F6D /* CommentViewController.swift */,
 				58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */,
@@ -133,6 +144,10 @@
 				58B4923C1FE010E800E08E14 /* Assets.xcassets */,
 				58B4923E1FE010E800E08E14 /* LaunchScreen.storyboard */,
 				58B492411FE010E800E08E14 /* Info.plist */,
+				58E3F1EF1FF0056E00071464 /* SharedTableViewController.swift */,
+				58E3F1F11FF0058200071464 /* CommentedTableViewController.swift */,
+				58E3F1F31FF0059B00071464 /* SharedTableViewCell.swift */,
+				58E3F1F51FF005AD00071464 /* CommentedTableViewCell.swift */,
 			);
 			path = food;
 			sourceTree = "<group>";
@@ -291,16 +306,21 @@
 			files = (
 				585B8E731FEE1B4800589ED8 /* RatingControl.swift in Sources */,
 				586D4B841FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift in Sources */,
+				58E3F1F01FF0056E00071464 /* SharedTableViewController.swift in Sources */,
 				58B492381FE010E800E08E14 /* ViewController.swift in Sources */,
 				586D4B861FEFA704007C3F6D /* ShowFoodReviewViewController.swift in Sources */,
+				58E3F1F61FF005AD00071464 /* CommentedTableViewCell.swift in Sources */,
 				58B492361FE010E800E08E14 /* AppDelegate.swift in Sources */,
 				5879FFCF1FEF3D010076B532 /* FoodReview.swift in Sources */,
 				5879FFD31FEF45860076B532 /* FoodReviewTableViewController.swift in Sources */,
 				58E3F1E01FEFD0F100071464 /* Comment.swift in Sources */,
 				58E3F1DE1FEFCF8F00071464 /* CommentTableViewController.swift in Sources */,
+				58E3F1EE1FF0053800071464 /* settingViewController.swift in Sources */,
 				58E3F1DC1FEFCAFB00071464 /* CommentTableViewCell.swift in Sources */,
 				5879FFD11FEF3F510076B532 /* FoodReviewTableViewCell.swift in Sources */,
 				586D4B881FEFC64A007C3F6D /* CommentViewController.swift in Sources */,
+				58E3F1F41FF0059B00071464 /* SharedTableViewCell.swift in Sources */,
+				58E3F1F21FF0058200071464 /* CommentedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
