@@ -8,12 +8,14 @@
 
 import UIKit
 
-class CommentViewController: UIViewController {
-
+class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var foodReviews = [FoodReview]()
+    var comments = [Comment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadSampleComments()
 
         // Do any additional setup after loading the view.
     }
@@ -24,14 +26,44 @@ class CommentViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+    
+        print("comments")
+        print(comments.count)
+        return comments.count
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "CommentTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CommentTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let comment = comments[indexPath.row]
+        
+        cell.commentText.text = comment.content
+        cell.userNameText.text = comment.userName
+        
+        return cell
+    }
+    
+    private func loadSampleComments() {
+        
+        guard let comment1 = Comment( content: "食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍", userName: "haung") else {
+            fatalError("Unable to instantiate meal1")
+        }
+    
+        comments += [comment1,comment1,comment1]
+    }
 }
