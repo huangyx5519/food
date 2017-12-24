@@ -2,34 +2,24 @@
 //  CreatFoodReviewViewController.swift
 //  food
 //
-//  Created by hyx on 2017/12/20.
+//  Created by hyx on 2017/12/24.
 //  Copyright © 2017年 hyx. All rights reserved.
 //
+
 
 import UIKit
 import os.log
 
 class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    
     //MARK: Properties
-
+    
     @IBOutlet weak var titleText: UITextField!
-    @IBOutlet weak var descText: UITextField!
-    @IBOutlet weak var RatingControl: RatingControl!
+    //    @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-    
-//    @IBOutlet weak var titleText: UITextField!
-//    @IBOutlet weak var titleText: UITextField!
-//
-//    @IBOutlet weak var descText: UITextField!
-//
-//    @IBOutlet weak var RatingControl: RatingControl!
-    
-    
-    
+    @IBOutlet weak var RatingControl: RatingControl!
+    @IBOutlet weak var descText: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
-//    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var foodReview: FoodReview?
     
@@ -38,16 +28,16 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -66,13 +56,13 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         let userName = "haung"
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-//        meal = Meal(name: name, photo: photo, rating: rating)
+        //        meal = Meal(name: name, photo: photo, rating: rating)
         
         foodReview = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName )
         
-//        guard let food1 = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName ) else {
-//            fatalError("Unable to instantiate meal1")
-//        }
+        //        guard let food1 = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName ) else {
+        //            fatalError("Unable to instantiate meal1")
+        //        }
     }
     
     
@@ -101,7 +91,7 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
     // MARK: - Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
-//        nameTextField.resignFirstResponder()
+        //        nameTextField.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
@@ -118,3 +108,4 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
     
     
 }
+
