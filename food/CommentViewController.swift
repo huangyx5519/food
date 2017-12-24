@@ -13,9 +13,14 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var foodReviews = [FoodReview]()
     var comments = [Comment]()
     
+    @IBOutlet weak var commentTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        commentTableView.delegate=self
+        commentTableView.dataSource=self
         loadSampleComments()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -34,8 +39,8 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
     
-        print("comments")
-        print(comments.count)
+//        print("comments")
+//        print(comments.count)
         return comments.count
         
     }
