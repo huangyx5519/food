@@ -16,11 +16,13 @@ class FoodReview {
     
     var title: String
     var photo: UIImage?
-    var content: Int
+    var rating: Int
+    var desc: String
+    var userName: String
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int,desc: String, userName: String) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -35,7 +37,9 @@ class FoodReview {
         // Initialize stored properties.
         self.title = name
         self.photo = photo
-        self.content = rating
+        self.rating = rating
+        self.desc = desc
+        self.userName = userName
         
     }
 }
