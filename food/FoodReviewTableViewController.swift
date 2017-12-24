@@ -50,13 +50,13 @@ class FoodReviewTableViewController: UITableViewController {
         }
         
         // Fetches the appropriate meal for the data source layout.
-        let food = foodReviews[indexPath.row]
+        let foodReview = foodReviews[indexPath.row]
         
-        cell.title.text = food.title
-        cell.photoImageView.image = food.photo
-//        cell.ratingControl.rating = food.rating
-        cell.userName.text = food.userName
-        cell.desc.text=food.desc
+        cell.title.text = foodReview.title
+        cell.photoImageView.image = foodReview.photo
+//        cell.ratingControl.rating = foodReview.rating
+        cell.userName.text = foodReview.userName
+        cell.desc.text=foodReview.desc
         
         
         return cell
@@ -114,11 +114,25 @@ class FoodReviewTableViewController: UITableViewController {
         print("a")
         let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
         
-        guard let food1 = FoodReview( title: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
+        guard let foodReview1 = FoodReview( title: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
             fatalError("Unable to instantiate meal1")
         }
         
-        foodReviews += [food1,food1,food1]
+        foodReviews += [foodReview1,foodReview1,foodReview1]
+    }
+    
+    
+    //MARK: Actions
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? CreatFoodReviewViewController, let foodReview = sourceViewController.foodReview {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: foodReviews.count, section: 0)
+            
+            foodReviews.append(foodReview)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
     }
 
 }

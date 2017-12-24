@@ -336,18 +336,17 @@
                         <viewLayoutGuide key="safeArea" id="vjE-yq-yVb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ZO3-nO-gMG">
-                        <barButtonItem key="rightBarButtonItem" title="提交" id="gnJ-Tt-M1X"/>
+                        <barButtonItem key="rightBarButtonItem" title="提交" id="Y7a-gi-ajb"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="RatingControl" destination="gT5-oY-ofc" id="3Bx-wC-V39"/>
-                        <outlet property="descText" destination="QgN-Se-Wq3" id="kLu-oi-uYO"/>
+                        <outlet property="RatingControl" destination="gT5-oY-ofc" id="up9-h2-203"/>
+                        <outlet property="descText" destination="QgN-Se-Wq3" id="5Ls-vh-Ilg"/>
                         <outlet property="photoImageView" destination="fm9-5A-ZmA" id="tkq-Pe-elk"/>
-                        <outlet property="saveBotton" destination="gnJ-Tt-M1X" id="4Ke-Au-qRs"/>
-                        <outlet property="saveButton" destination="gnJ-Tt-M1X" id="0EM-1U-Aua"/>
+                        <outlet property="saveButton" destination="Y7a-gi-ajb" id="1oD-aX-O2e"/>
                         <outlet property="tilte" destination="JGY-3f-LcG" id="etu-o9-ZJQ"/>
                         <outlet property="title" destination="JGY-3f-LcG" id="VG2-V0-7xB"/>
                         <outlet property="titleTest" destination="JGY-3f-LcG" id="sQW-8z-Us9"/>
-                        <outlet property="titleText" destination="JGY-3f-LcG" id="sLj-ea-0NM"/>
+                        <outlet property="titleText" destination="JGY-3f-LcG" id="JG1-U0-8RF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbb-hB-l92" userLabel="First Responder" sceneMemberID="firstResponder"/>

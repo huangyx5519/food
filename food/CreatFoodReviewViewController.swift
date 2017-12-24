@@ -13,15 +13,25 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
 
     //MARK: Properties
 
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var descText: UITextField!
+    @IBOutlet weak var RatingControl: RatingControl!
     @IBOutlet weak var photoImageView: UIImageView!
     
-    @IBOutlet weak var titleText: UITextField!
+//    @IBOutlet weak var titleText: UITextField!
+//    @IBOutlet weak var titleText: UITextField!
+//
+//    @IBOutlet weak var descText: UITextField!
+//
+//    @IBOutlet weak var RatingControl: RatingControl!
     
-    @IBOutlet weak var descText: UITextField!
     
-    @IBOutlet weak var RatingControl: RatingControl!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+//    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    var foodReview: FoodReview?
     
     
     override func viewDidLoad() {
@@ -58,9 +68,11 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         // Set the meal to be passed to MealTableViewController after the unwind segue.
 //        meal = Meal(name: name, photo: photo, rating: rating)
         
-        guard let food1 = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName ) else {
-            fatalError("Unable to instantiate meal1")
-        }
+        foodReview = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName )
+        
+//        guard let food1 = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName ) else {
+//            fatalError("Unable to instantiate meal1")
+//        }
     }
     
     
