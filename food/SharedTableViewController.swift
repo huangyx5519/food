@@ -10,6 +10,12 @@ import UIKit
 
 class SharedTableViewController: UITableViewController {
 
+    var sharedList = [FoodReview]()
+    
+    func loadList(){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,23 +35,27 @@ class SharedTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return sharedList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sharedCell", for: indexPath) as! SharedTableViewCell
 
         // Configure the cell...
-
+        
+        cell.nameLabel.text = sharedList[indexPath.row].title
+        cell.descLabel.text = sharedList[indexPath.row].desc
+        cell.foodImage.image = sharedList[indexPath.row].photo
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
