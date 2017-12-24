@@ -122,6 +122,39 @@ class FoodReviewTableViewController: UITableViewController {
     }
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "ShowDetail":
+            guard let showFoodReviewViewController = segue.destination as? ShowFoodReviewViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedFoodReviewCell = sender as? FoodReviewTableViewCell else {
+                fatalError("Unexpected sender")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedFoodReviewCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedFoodReview = foodReviews[indexPath.row]
+            showFoodReviewViewController.foodReview = selectedFoodReview
+         
+        case "Create":
+            print("create")
+            
+        default:
+            print("others")
+//            fatalError("Unexpected Segue Identifier")
+        }
+    }
+    
+    
     //MARK: Actions
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {

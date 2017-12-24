@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		585B8E731FEE1B4800589ED8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585B8E721FEE1B4800589ED8 /* RatingControl.swift */; };
 		586D4B841FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D4B831FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift */; };
+		586D4B861FEFA704007C3F6D /* ShowFoodReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */; };
 		5879FFCF1FEF3D010076B532 /* FoodReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879FFCE1FEF3D010076B532 /* FoodReview.swift */; };
 		5879FFD11FEF3F510076B532 /* FoodReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */; };
 		5879FFD31FEF45860076B532 /* FoodReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		585B8E721FEE1B4800589ED8 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		586D4B831FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatFoodReviewViewController.swift; sourceTree = "<group>"; };
+		586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFoodReviewViewController.swift; sourceTree = "<group>"; };
 		5879FFCE1FEF3D010076B532 /* FoodReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReview.swift; sourceTree = "<group>"; };
 		5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReviewTableViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				58B492371FE010E800E08E14 /* ViewController.swift */,
 				58B492391FE010E800E08E14 /* Main.storyboard */,
 				5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */,
+				586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */,
 				5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */,
 				585B8E721FEE1B4800589ED8 /* RatingControl.swift */,
 				58B4923C1FE010E800E08E14 /* Assets.xcassets */,
@@ -277,6 +280,7 @@
 				585B8E731FEE1B4800589ED8 /* RatingControl.swift in Sources */,
 				586D4B841FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift in Sources */,
 				58B492381FE010E800E08E14 /* ViewController.swift in Sources */,
+				586D4B861FEFA704007C3F6D /* ShowFoodReviewViewController.swift in Sources */,
 				58B492361FE010E800E08E14 /* AppDelegate.swift in Sources */,
 				5879FFCF1FEF3D010076B532 /* FoodReview.swift in Sources */,
 				5879FFD31FEF45860076B532 /* FoodReviewTableViewController.swift in Sources */,
