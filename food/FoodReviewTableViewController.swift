@@ -111,14 +111,14 @@ class FoodReviewTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleFoods() {
-        
+        print("a")
         let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
         
         guard let food1 = FoodReview(name: "Pork", photo: photo1, rating: 4, desc:"好吃",userName: "huang") else {
             fatalError("Unable to instantiate meal1")
         }
         
-        foodReviews += [food1]
+        foodReviews += [food1,food1,food1]
     }
 
 }

@@ -157,7 +157,7 @@
         <!--主页-->
         <scene sceneID="1CI-g7-qEP">
             <objects>
-                <tableViewController id="WEn-fr-PEL" sceneMemberID="viewController">
+                <tableViewController id="WEn-fr-PEL" customClass="FoodReviewTableViewController" customModule="food" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VEv-Gb-qKA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,57 +170,36 @@
                                     <rect key="frame" x="0.0" y="0.0" width="307" height="164.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="屏幕快照 2017-12-12 下午10.27.09" translatesAutoresizingMaskIntoConstraints="NO" id="loY-r1-X06">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="屏幕快照 2017-12-12 下午10.27.09" translatesAutoresizingMaskIntoConstraints="NO" id="loY-r1-X06">
                                             <rect key="frame" x="241" y="11" width="118" height="98"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="118" id="frI-et-8xW"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="食物名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEO-0R-4Nk">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食物名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEO-0R-4Nk">
                                             <rect key="frame" x="16" y="11" width="78" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_person" translatesAutoresizingMaskIntoConstraints="NO" id="LmL-g0-z0t">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_person" translatesAutoresizingMaskIntoConstraints="NO" id="LmL-g0-z0t">
                                             <rect key="frame" x="16" y="126" width="25" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="vcH-Cg-Fpy"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-9u-LZD">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-9u-LZD">
                                             <rect key="frame" x="54" y="128" width="52" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="52" id="Qqn-vL-Q0s"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUY-mu-e6o">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUY-mu-e6o">
                                             <rect key="frame" x="16" y="47" width="207" height="69"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="cUY-mu-e6o" firstAttribute="centerY" secondItem="TGU-JE-8wy" secondAttribute="centerY" id="000-Ku-0ws"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="loY-r1-X06" secondAttribute="bottom" constant="44" id="B8W-bq-7Kr"/>
-                                        <constraint firstItem="PEO-0R-4Nk" firstAttribute="top" secondItem="loY-r1-X06" secondAttribute="top" id="EpR-We-ohg"/>
-                                        <constraint firstItem="loY-r1-X06" firstAttribute="leading" secondItem="cUY-mu-e6o" secondAttribute="trailing" constant="18" id="F1N-gI-Hm2"/>
-                                        <constraint firstItem="cUY-mu-e6o" firstAttribute="top" secondItem="PEO-0R-4Nk" secondAttribute="bottom" constant="4" id="GYU-TP-MO5"/>
-                                        <constraint firstItem="PEO-0R-4Nk" firstAttribute="leading" secondItem="TGU-JE-8wy" secondAttribute="leadingMargin" id="LCo-Ba-hvH"/>
-                                        <constraint firstItem="LmL-g0-z0t" firstAttribute="centerY" secondItem="yPe-9u-LZD" secondAttribute="centerY" id="Lca-rF-mZw"/>
-                                        <constraint firstItem="PEO-0R-4Nk" firstAttribute="top" secondItem="TGU-JE-8wy" secondAttribute="topMargin" id="LgU-8H-jGY"/>
-                                        <constraint firstItem="yPe-9u-LZD" firstAttribute="leading" secondItem="LmL-g0-z0t" secondAttribute="trailing" constant="13" id="MSa-2m-iFQ"/>
-                                        <constraint firstItem="yPe-9u-LZD" firstAttribute="top" secondItem="cUY-mu-e6o" secondAttribute="bottom" constant="12" id="QN3-2r-zgG"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="LmL-g0-z0t" secondAttribute="bottom" constant="2" id="W9R-3u-aiw"/>
-                                        <constraint firstItem="cUY-mu-e6o" firstAttribute="leading" secondItem="LmL-g0-z0t" secondAttribute="leading" id="bu0-U6-3QB"/>
-                                        <constraint firstItem="LmL-g0-z0t" firstAttribute="top" secondItem="cUY-mu-e6o" secondAttribute="bottom" constant="10" id="hn0-Hj-N6s"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="loY-r1-X06" secondAttribute="trailing" constant="-59" id="k2m-tO-q4q"/>
-                                        <constraint firstItem="PEO-0R-4Nk" firstAttribute="leading" secondItem="cUY-mu-e6o" secondAttribute="leading" id="ujY-jM-4FU"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="Desc" destination="cUY-mu-e6o" id="fcl-EE-XQx"/>
