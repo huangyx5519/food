@@ -10,10 +10,12 @@ import UIKit
 
 class SharedTableViewController: UITableViewController {
 
-    var sharedList = [FoodReview]()
+    var sharedList = [sharedFood]()
     
     func loadList(){
-        
+        sharedList.append(sharedFood(name: "breakfast" , desc: "delicious", photo : nil))
+        sharedList.append(sharedFood(name: "lunch" , desc: "yummy", photo : nil))
+        sharedList.append(sharedFood(name: "dinner" , desc: "nice", photo : nil))
     }
     
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class SharedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +52,7 @@ class SharedTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        cell.nameLabel.text = sharedList[indexPath.row].title
+        cell.nameLabel.text = sharedList[indexPath.row].name
         cell.descLabel.text = sharedList[indexPath.row].desc
         cell.foodImage.image = sharedList[indexPath.row].photo
         
