@@ -13,7 +13,7 @@ import UIKit
 class FoodReview {
     
     //MARK: Properties
-    
+    var id: String
     var title: String
     var photo: UIImage?
     var rating: Int
@@ -22,7 +22,7 @@ class FoodReview {
     
     //MARK: Initialization
     
-    init?(title: String, photo: UIImage?, rating: Int,desc: String, userName: String) {
+    init?(id: String, title: String, photo: UIImage?, rating: Int,desc: String, userName: String) {
         
         // The name must not be empty
         guard !title.isEmpty else {
@@ -35,6 +35,7 @@ class FoodReview {
         }
         
         // Initialize stored properties.
+        self.id = id
         self.title = title
         self.photo = photo
         self.rating = rating

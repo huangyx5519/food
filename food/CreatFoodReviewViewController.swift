@@ -9,6 +9,8 @@
 
 import UIKit
 import os.log
+import Alamofire
+import SwiftyJSON
 
 class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -40,7 +42,6 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         super.prepare(for: segue, sender: sender)
         
         // Configure the destination view controller only when the save button is pressed.
@@ -54,11 +55,43 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         let rating = RatingControl.rating
         let desc = descText.text ?? ""
         let userName = "haung"
+        let userID = "1"
+        
+        //上传
+        let imageData = UIImagePNGRepresentation(photo!)!
+        
+      let httpHeaders = ["Content-Type": "multipart/form-data",
+                           "boundary":"----WebKitFormBoundary7MA4YWxkTrZu0gW"]
+//        Alamofire.HTTPHeaders.merging(["Content-Type": "multipart/form-data",
+//                                       "boundary":"----WebKitFormBoundary7MA4YWxkTrZu0gW"])
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(imageData, withName: "foodPictureEntry")
+                multipartFormData.append(title.data(using: String.Encoding.utf8)!, withName: "foodName",fileName:"x.png",mimeType:"image/png")
+                multipartFormData.append(String(rating).data(using: String.Encoding.utf8)!, withName: "level")
+                multipartFormData.append(desc.data(using: String.Encoding.utf8)!, withName: "foodIntro")
+                multipartFormData.append(userID.data(using: String.Encoding.utf8)!, withName: "id")
+        },
+            
+            to: "http://119.29.189.146:8080/foodTracker/foodRecord/newFoodRecord",
+            headers:httpHeaders,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        debugPrint(response)
+                    }
+                case .failure(let encodingError):
+                    print()
+                    print(encodingError)
+                }
+        }
+        )
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
         //        meal = Meal(name: name, photo: photo, rating: rating)
         
-        foodReview = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName )
+//        foodReview = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName )
         
         //        guard let food1 = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName ) else {
         //            fatalError("Unable to instantiate meal1")

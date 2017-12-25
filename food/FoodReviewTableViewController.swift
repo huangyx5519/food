@@ -96,25 +96,23 @@ class FoodReviewTableViewController: UITableViewController {
                     //print("count\(count)")
                     for index in 0...count-1 {
                     let foodReviewsDatas =  JSOnDictory["data"]["foodRecordList"][index]
+                        let id = String(describing: foodReviewsDatas["foodRecordId"])
                         let title = String(describing: foodReviewsDatas["foodName"])
                         let photo = String(describing: foodReviewsDatas["foodPicture"])
                         let rating = Int(String(describing: foodReviewsDatas["foodName"]))
                         let desc = String(describing: foodReviewsDatas["foodName"])
                         let userName = String(describing: foodReviewsDatas["userNickname"])
                        
-                        let foodReview1 = FoodReview( title: title, photo: photo1, rating: 4, desc:desc,userName: userName)
                         var image = photo1
-                        let url:NSURL = NSURL(string : photo)!
-                        do{
-                            let data:NSData = try NSData(contentsOf: url as URL)
-                            image = UIImage(data: data as Data)!
-                        }catch {
-                            print("gggggggg")
+                        let url:URL = URL(string : photo)!
+                        let data = try?Data(contentsOf: url)
+                        if let imageData = data{
+                            image = UIImage(data: imageData)
                         }
                         
                         
                             
-                        self.foodReviews.append(FoodReview(title: title,photo: image,rating: 4,desc: desc, userName: userName)!)
+                        self.foodReviews.append(FoodReview(id: id,title: title,photo: image,rating: 4,desc: desc, userName: userName)!)
                                     }
                     
                     DispatchQueue.main.async(execute: {
