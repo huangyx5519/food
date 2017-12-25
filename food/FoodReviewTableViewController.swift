@@ -5,8 +5,9 @@
 //  Created by hyx on 2017/12/24.
 //  Copyright © 2017年 hyx. All rights reserved.
 //
-
+import Alamofire
 import UIKit
+import SwiftyJSON
 
 class FoodReviewTableViewController: UITableViewController {
     
@@ -66,14 +67,49 @@ class FoodReviewTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleFoods() {
-        print("a")
-        let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
+//        let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
+//
+//        guard let foodReview1 = FoodReview( title: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
+//            fatalError("Unable to instantiate meal1")
+//        }
+//
+//        foodReviews += [foodReview1,foodReview1,foodReview1]
         
-        guard let foodReview1 = FoodReview( title: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
-            fatalError("Unable to instantiate meal1")
+//        let parameters: Parameters = ["lastFoodRecordId": "0"]
+        
+        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getOtherFoodRecord/?lastFoodRecordId=0", method: .get)
+            .responseJSON { (response) in
+                if let json = response.result.value {
+                    let JSOnDictory = JSON(json)
+//                    let count = JSOnDictory["data"]["foodRecordList"].count
+//                    print("count\(count)")
+                    let foodReviewsDatas =  JSOnDictory["data"]["foodRecordList"][0]
+                    let title = foodReviewsDatas["foodName"]
+                    let photo = foodReviewsDatas["foodPicture"]
+                    let rating = foodReviewsDatas["foodName"]
+                    let desc = foodReviewsDatas["foodName"]
+                    print("title\(title)")
+        
+//                    a = foodReviewsDatas.
+//                    for foodReviewdata in foodReviewsDatas{
+//                        let title = foodReviewdata["foodName"]
+//                        let photo = foodReviewdata["foodPicture"]
+//                        let rating = foodReviewdata["foodName"]
+//                        let desc = foodReviewdata["foodName"]
+//                        let foodReview = FoodReview( title: title, photo: foodReviewdata["foodPicture"], rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang")
+//                        foodReviews+=foodReview
+//                    }
+                    
+                    
+//                    print("translation\(translation)")
+                }
+                
+                
+//                print(response)
+//                let j = response.result.value
+//                let JSOnDictory = JSON(j)
+//                let translation =  JSOnDictory["data"]
         }
-        
-        foodReviews += [foodReview1,foodReview1,foodReview1]
     }
     
     

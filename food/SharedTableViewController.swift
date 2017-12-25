@@ -13,9 +13,10 @@ class SharedTableViewController: UITableViewController {
     var sharedList = [sharedFood]()
     
     func loadList(){
-        sharedList.append(sharedFood(name: "breakfast" , desc: "delicious", photo : nil))
-        sharedList.append(sharedFood(name: "lunch" , desc: "yummy", photo : nil))
-        sharedList.append(sharedFood(name: "dinner" , desc: "nice", photo : nil))
+        let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
+        sharedList.append(sharedFood(name: "breakfast" , desc: "delicious", photo : photo1))
+        sharedList.append(sharedFood(name: "lunch" , desc: "yummy", photo : photo1))
+        sharedList.append(sharedFood(name: "dinner" , desc: "nice", photo : photo1))
     }
     
     override func viewDidLoad() {
@@ -48,13 +49,18 @@ class SharedTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sharedCell", for: indexPath) as! SharedTableViewCell
-
-        // Configure the cell...
+        let cellIdentifier = "SharedTableViewCell"
         
-        cell.nameLabel.text = sharedList[indexPath.row].name
-        cell.descLabel.text = sharedList[indexPath.row].desc
-        cell.foodImage.image = sharedList[indexPath.row].photo
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SharedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let food = sharedList[indexPath.row]
+        
+        cell.nameLabel.text = food.name
+        cell.descLabel.text = food.desc
+        cell.foodImage.image = food.photo
         
         return cell
     }
