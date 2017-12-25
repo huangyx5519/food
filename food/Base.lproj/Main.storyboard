@@ -49,7 +49,7 @@
         <!--我的-->
         <scene sceneID="wVi-jJ-Ny0">
             <objects>
-                <viewController id="pDZ-vX-KrD" sceneMemberID="viewController">
+                <viewController id="pDZ-vX-KrD" customClass="settingViewController" customModule="food" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XSv-H0-fpZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,6 +128,9 @@
                         <viewLayoutGuide key="safeArea" id="kOn-NO-QlX"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="GWp-Vj-8yD"/>
+                    <connections>
+                        <outlet property="nicknamebutton" destination="l4R-KW-iv2" id="Dz1-du-kCP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhq-W7-i8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

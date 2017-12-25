@@ -10,10 +10,14 @@ import UIKit
 
 class settingViewController: UIViewController {
 
+    @IBOutlet weak var nicknamebutton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        nicknamebutton.setTitle(signinViewController.nickName, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class signinViewController: UIViewController {
 
@@ -14,13 +16,39 @@ class signinViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var msgLabel: UILabel!
     
+    static var userId  = ""
+    static var nickName  = ""
+    
     @IBAction func loginButton(_ sender: Any) {
         if usernameText.text == "" {
             msgLabel.text = "用户名不能为空"
         }else if passwordText.text == ""{
             msgLabel.text = "密码不能为空"
         }else {
-            self.performSegue(withIdentifier: "login", sender: self)
+            let username = usernameText.text
+            let password = passwordText.text
+            
+            Alamofire.request("http://119.29.189.146:8080/foodTracker/user/login?account="+username!+"&password="+password!, method: .get)
+                .responseJSON { (response) in
+                    if let json = response.result.value {
+                        let JSOnDictory = JSON(json)
+                        let status =  String(describing: JSOnDictory["status"])
+                        
+                        if status == "10002"
+                        {
+                            self.msgLabel.text = "用户名／密码错误"
+                        }else{
+                            let data = JSOnDictory["data"]["userInfo"]
+                            let id = String(describing: data["id"])
+                            let nickname = String(describing: data["nickname"])
+                            signinViewController.userId = id
+                            signinViewController.nickName = nickname
+                            print("id\(id),,,,,nickname\(nickname)")
+                            self.performSegue(withIdentifier: "login", sender: self)
+                        }
+                    }
+            }
+            
         }
         
     }

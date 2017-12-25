@@ -60,7 +60,7 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         //上传
         let imageData = UIImagePNGRepresentation(photo!)!
         
-      let httpHeaders = ["Content-Type": "multipart/form-data",
+        let httpHeaders:HTTPHeaders = ["Content-Type": "multipart/form-data",
                            "boundary":"----WebKitFormBoundary7MA4YWxkTrZu0gW"]
 //        Alamofire.HTTPHeaders.merging(["Content-Type": "multipart/form-data",
 //                                       "boundary":"----WebKitFormBoundary7MA4YWxkTrZu0gW"])
