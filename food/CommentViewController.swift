@@ -7,18 +7,50 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var foodReviews = [FoodReview]()
+    var foodReview : FoodReview?
     var comments = [Comment]()
     
+    @IBOutlet weak var foodNameLabel: UILabel!
+    @IBOutlet weak var foodDescLabel: UILabel!
     @IBOutlet weak var commentTableView: UITableView!
     
+    @IBOutlet weak var commentText: UITextField!
+    @IBAction func postComment(_ sender: Any) {
+        let userId = signinViewController.userId
+        let foodId = foodReview?.id
+        let content = commentText.text
+        
+        let url1 =  "http://119.29.189.146:8080/foodTracker/evaluation/newEvaluation?userId="
+        let url2 = userId+"&foodRecordId="+foodId!+"&evaluationContent="+content!
+        let url = url1+url2
+        Alamofire.request(url, method: .get)
+            .responseJSON { (response) in
+                if let json = response.result.value {
+                    let JSOnDictory = JSON(json)
+                    let status = String(describing: JSOnDictory["status"])
+                    if status == "10001"{
+                        self.comments.append(Comment(content: content!,userName: signinViewController.nickName)!)
+                        DispatchQueue.main.async(execute: {
+                            self.commentTableView.reloadData()
+                        })
+                    }
+                   
+                }
+        }
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         commentTableView.delegate=self
         commentTableView.dataSource=self
+        foodNameLabel.text = foodReview?.title
+        foodDescLabel.text = foodReview?.desc
         loadSampleComments()
         
 
@@ -65,10 +97,34 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     private func loadSampleComments() {
         
-        guard let comment1 = Comment( content: "食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍", userName: "haung") else {
-            fatalError("Unable to instantiate meal1")
+//        guard let comment1 = Comment( content: "食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍", userName: "haung") else {
+//            fatalError("Unable to instantiate meal1")
+//        }
+//    
+//        comments += [comment1,comment1,comment1]
+        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getFoodRecordDetail?foodRecordId="+(foodReview?.id)!, method: .get)
+            .responseJSON { (response) in
+                if let json = response.result.value {
+                    let JSOnDictory = JSON(json)
+                    let count = JSOnDictory["data"]["foodRecordDetail"]["evaluationList"].count
+                    if count > 0{
+                    for index in 0...count-1 {
+                        let foodCommentData =  JSOnDictory["data"]["foodRecordDetail"]["evaluationList"][index]
+                        
+                        let comment = String(describing: foodCommentData["evaluationContent"])
+                       let nickname = String(describing: foodCommentData["userNickname"])
+                        
+                        self.comments.append(Comment(content: comment,userName: nickname)!)
+                        
+                        DispatchQueue.main.async(execute: {
+                            
+                            self.commentTableView.reloadData()
+                        
+                        })
+                        }
+
+                    }
+                }
         }
-    
-        comments += [comment1,comment1,comment1]
     }
 }

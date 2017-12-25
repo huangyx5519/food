@@ -649,6 +649,9 @@
                                 <state key="normal" title="提交">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="postComment:" destination="4rH-P8-foj" eventType="touchUpInside" id="n9J-s3-rDP"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLj-45-fYk">
                                 <rect key="frame" x="0.0" y="170" width="375" height="446"/>
@@ -723,6 +726,9 @@
                     <navigationItem key="navigationItem" title="评论" id="dIH-ni-PGx"/>
                     <connections>
                         <outlet property="commentTableView" destination="aLj-45-fYk" id="sZt-Hw-FmR"/>
+                        <outlet property="commentText" destination="BVb-5t-KU2" id="Ezr-DA-t17"/>
+                        <outlet property="foodDescLabel" destination="A3c-KG-Wzt" id="hcv-9e-XrP"/>
+                        <outlet property="foodNameLabel" destination="YfU-v4-TZI" id="6LV-Gu-gzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoU-fG-foC" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class CommentTableViewController: UITableViewController {
     
@@ -62,10 +64,16 @@ class CommentTableViewController: UITableViewController {
 
     private func loadSampleComments() {
         
-        guard let comment1 = Comment( content: "食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍", userName: "haung") else {
-            fatalError("Unable to instantiate meal1")
-        }
+//        guard let comment1 = Comment( content: "食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍", userName: "haung") else {
+//            fatalError("Unable to instantiate meal1")
+//        }
+//        
+//        comments += [comment1,comment1,comment1]
         
-        comments += [comment1,comment1,comment1]
-    }
+                    
+                    
+                    
+                }
+    
+        
 }

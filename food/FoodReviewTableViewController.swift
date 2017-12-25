@@ -100,7 +100,7 @@ class FoodReviewTableViewController: UITableViewController {
                         let title = String(describing: foodReviewsDatas["foodName"])
                         let photo = String(describing: foodReviewsDatas["foodPicture"])
                         let rating = Int(String(describing: foodReviewsDatas["foodName"]))
-                        let desc = String(describing: foodReviewsDatas["foodName"])
+                        let desc = String(describing: foodReviewsDatas["foodIntro"])
                         let userName = String(describing: foodReviewsDatas["userNickname"])
                        
                         var image = photo1
