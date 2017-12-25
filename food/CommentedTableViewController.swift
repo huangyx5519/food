@@ -21,12 +21,15 @@ class CommentedTableViewController: UITableViewController {
 //        commentedList.append(commentFood(name: "lunch" , desc: "yummy", comment:"nice",photo : photo1))
 //        commentedList.append(commentFood(name: "dinner" , desc: "nice",comment:"so so", photo : photo1))
         
-        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getMyEvaluatedFoodRecord?userId=1", method: .get)
+        let id = signinViewController.userId
+        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getMyEvaluatedFoodRecord?userId="+id, method: .get)
             .responseJSON { (response) in
                 if let json = response.result.value {
                     let JSOnDictory = JSON(json)
                     let count = JSOnDictory["data"]["evaluatedFoodRecord"].count
-                    print("count\(count)")
+                    
+                    if count > 0
+                    {
                     for index in 0...count-1 {
                         let foodReviewsDatas =  JSOnDictory["data"]["evaluatedFoodRecord"][index]
                         let title = String(describing: foodReviewsDatas["foodName"])
@@ -35,19 +38,13 @@ class CommentedTableViewController: UITableViewController {
                         let desc = String(describing: foodReviewsDatas["foodIntro"])
                         let userName = String(describing: foodReviewsDatas["userNickname"])
                         let comment = String(describing: foodReviewsDatas["evaluationContent"])
-                        print("comment\(comment)")
                         self.commentedList.append(commentFood(name: title , desc: desc, comment: comment,photo : photo1))
-                        
                         DispatchQueue.main.async(execute: {
                             
                             self.commentedTableView.reloadData()
                             
                         })
-                        
-                        
-                        //                        foodReviews.append(FoodReview(title: title,photo: photo1,rating: 4,desc: desc, userName: userName))
-                        
-                        
+                        }
                     }
                     
                 }
