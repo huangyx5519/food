@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class FoodReviewTableViewController: UITableViewController {
     
+    @IBOutlet var listTableView: UITableView!
     var foodReviews = [FoodReview]()
 
     override func viewDidLoad() {
@@ -44,7 +45,6 @@ class FoodReviewTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cellIdentifier = "FoodReviewTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FoodReviewTableViewCell  else {
@@ -67,7 +67,7 @@ class FoodReviewTableViewController: UITableViewController {
   
     //MARK: Private Methods
     
-    private func loadSampleFoods() {
+    private func loadSampleFoods(){
         let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
 
 //        guard let foodReview1 = FoodReview( title: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
@@ -77,7 +77,8 @@ class FoodReviewTableViewController: UITableViewController {
 //        foodReviews += [foodReview1,foodReview1,foodReview1]
         
 //        let parameters: Parameters = ["lastFoodRecordId": "0"]
-        
+        //weak var weakSelf = self
+
         Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getOtherFoodRecord/?lastFoodRecordId=0", method: .get)
             .responseJSON { (response) in
                 if let json = response.result.value {
@@ -91,40 +92,24 @@ class FoodReviewTableViewController: UITableViewController {
                         let rating = Int(String(describing: foodReviewsDatas["foodName"]))
                         let desc = String(describing: foodReviewsDatas["foodName"])
                         let userName = String(describing: foodReviewsDatas["userNickname"])
-                       // print("title\(title)")
-                        
-//                        foodReviews.append(FoodReview(title: title,photo: photo1,rating: 4,desc: desc, userName: userName))
-                        guard let foodReview1 = FoodReview( title: title, photo: photo1, rating: 4, desc:desc,userName: userName) else {
-                                        fatalError("Unable to instantiate meal1")
+                       
+                        let foodReview1 = FoodReview( title: title, photo: photo1, rating: 4, desc:desc,userName: userName)
+                            
+                        self.foodReviews.append(FoodReview(title: title,photo: photo1,rating: 4,desc: desc, userName: userName)!)
                                     }
+                    
+                    DispatchQueue.main.async(execute: {
                         
-                        self.foodReviews += [foodReview1]
+                        self.listTableView.reloadData()
                         
-                    }
-                    print("foodReview\(self.foodReviews)")
-                    
-//                    a = foodReviewsDatas.
-//                    for foodReviewdata in foodReviewsDatas{
-//                        let title = foodReviewdata["foodName"]
-//                        let photo = foodReviewdata["foodPicture"]
-//                        let rating = foodReviewdata["foodName"]
-//                        let desc = foodReviewdata["foodName"]
-//                        let foodReview = FoodReview( title: title, photo: foodReviewdata["foodPicture"], rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang")
-//                        foodReviews+=foodReview
-//                    }
-                    
-                    
-//                    print("translation\(translation)")
+                    })
+                        //weakSelf?.foodReviews += [foodReview1]
                 }
-                
-                
-//                print(response)
-//                let j = response.result.value
-//                let JSOnDictory = JSON(j)
-//                let translation =  JSOnDictory["data"]
         }
-        
     }
+    
+
+
     
     
     
