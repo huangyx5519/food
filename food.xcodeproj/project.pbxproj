@@ -26,6 +26,8 @@
 		58D1D0141FF0BAAB00FB8988 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D1D0071FF0BA9100FB8988 /* SwiftyJSON.framework */; };
 		58D1D0151FF0BAAB00FB8988 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58D1D0071FF0BA9100FB8988 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58D1D0191FF0D77100FB8988 /* commentFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1D0181FF0D77100FB8988 /* commentFood.swift */; };
+		58D1D01B1FF0E96E00FB8988 /* signinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1D01A1FF0E96E00FB8988 /* signinViewController.swift */; };
+		58D1D01D1FF0E98200FB8988 /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1D01C1FF0E98200FB8988 /* signupViewController.swift */; };
 		58E3F1DC1FEFCAFB00071464 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DB1FEFCAFB00071464 /* CommentTableViewCell.swift */; };
 		58E3F1DE1FEFCF8F00071464 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */; };
 		58E3F1E01FEFD0F100071464 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1DF1FEFD0F100071464 /* Comment.swift */; };
@@ -205,6 +207,8 @@
 		58B492571FE010E800E08E14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58D1CFFB1FF0BA9000FB8988 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../../Downloads/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		58D1D0181FF0D77100FB8988 /* commentFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentFood.swift; sourceTree = "<group>"; };
+		58D1D01A1FF0E96E00FB8988 /* signinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signinViewController.swift; sourceTree = "<group>"; };
+		58D1D01C1FF0E98200FB8988 /* signupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
 		58E3F1DB1FEFCAFB00071464 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		58E3F1DD1FEFCF8F00071464 /* CommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
 		58E3F1DF1FEFD0F100071464 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 				58D1D0181FF0D77100FB8988 /* commentFood.swift */,
 				58E3F1F91FF0176600071464 /* testTableViewCell.swift */,
 				5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */,
+				58D1D01A1FF0E96E00FB8988 /* signinViewController.swift */,
+				58D1D01C1FF0E98200FB8988 /* signupViewController.swift */,
 				586D4B851FEFA704007C3F6D /* ShowFoodReviewViewController.swift */,
 				58E3F1ED1FF0053800071464 /* settingViewController.swift */,
 				5879FFD01FEF3F510076B532 /* FoodReviewTableViewCell.swift */,
@@ -592,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D1D01D1FF0E98200FB8988 /* signupViewController.swift in Sources */,
 				585B8E731FEE1B4800589ED8 /* RatingControl.swift in Sources */,
 				586D4B841FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift in Sources */,
 				58E3F1FA1FF0176600071464 /* testTableViewCell.swift in Sources */,
@@ -610,6 +617,7 @@
 				58E3F1DC1FEFCAFB00071464 /* CommentTableViewCell.swift in Sources */,
 				5879FFD11FEF3F510076B532 /* FoodReviewTableViewCell.swift in Sources */,
 				586D4B881FEFC64A007C3F6D /* CommentViewController.swift in Sources */,
+				58D1D01B1FF0E96E00FB8988 /* signinViewController.swift in Sources */,
 				58E3F1F41FF0059B00071464 /* SharedTableViewCell.swift in Sources */,
 				58E3F1F21FF0058200071464 /* CommentedTableViewController.swift in Sources */,
 			);
@@ -793,7 +801,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = a.food;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -808,7 +816,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = a.food;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

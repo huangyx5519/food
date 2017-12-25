@@ -7,9 +7,46 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class CommentedTableViewController: UITableViewController {
-
+    
+    var commentedList = [commentFood]()
+    
+    func loadList(){
+        let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
+//        commentedList.append(commentFood(name: "breakfast" , desc: "delicious", comment: "good",photo : photo1))
+//        commentedList.append(commentFood(name: "lunch" , desc: "yummy", comment:"nice",photo : photo1))
+//        commentedList.append(commentFood(name: "dinner" , desc: "nice",comment:"so so", photo : photo1))
+        
+        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getMyEvaluatedFoodRecord?userId=1", method: .get)
+            .responseJSON { (response) in
+                if let json = response.result.value {
+                    let JSOnDictory = JSON(json)
+                    let count = JSOnDictory["data"]["evaluatedFoodRecord"].count
+                    print("count\(count)")
+                    for index in 0...count-1 {
+                        let foodReviewsDatas =  JSOnDictory["data"]["evaluatedFoodRecord"][index]
+                        let title = String(describing: foodReviewsDatas["foodName"])
+                        let photo = String(describing: foodReviewsDatas["foodPicture"])
+                        let rating = Int(String(describing: foodReviewsDatas["level"]))
+                        let desc = String(describing: foodReviewsDatas["foodIntro"])
+                        let userName = String(describing: foodReviewsDatas["userNickname"])
+                        let comment = foodReviewsDatas["evaluationContent"]
+                        print("comment\(comment)")
+                        
+                        //                        foodReviews.append(FoodReview(title: title,photo: photo1,rating: 4,desc: desc, userName: userName))
+                        
+                        
+                    }
+                    
+                }
+                
+                
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +55,7 @@ class CommentedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +67,32 @@ class CommentedTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return commentedList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+        let cellIdentifier = "CommentedTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CommentedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let food = commentedList[indexPath.row]
+        
+        cell.nameLabel.text = food.name
+        cell.descLabel.text = food.desc
+        cell.commentLabel.text = food.comment
+        cell.foodImage.image = food.photo
+        
+        return cell    }
+ 
 
     /*
     // Override to support conditional editing of the table view.

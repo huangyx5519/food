@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class SharedTableViewController: UITableViewController {
 
@@ -14,11 +16,28 @@ class SharedTableViewController: UITableViewController {
     
     func loadList(){
         let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
-        sharedList.append(sharedFood(name: "breakfast" , desc: "delicious", photo : photo1))
-        sharedList.append(sharedFood(name: "lunch" , desc: "yummy", photo : photo1))
-        sharedList.append(sharedFood(name: "dinner" , desc: "nice", photo : photo1))
+//        sharedList.append(sharedFood(name: "breakfast" , desc: "delicious", photo : photo1))
+//        sharedList.append(sharedFood(name: "lunch" , desc: "yummy", photo : photo1))
+//        sharedList.append(sharedFood(name: "dinner" , desc: "nice", photo : photo1))
+        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getMyFoodRecord/?userId=1", method: .get)
+            .responseJSON { (response) in
+                if let json = response.result.value {
+                    let JSOnDictory = JSON(json)
+                    let count = JSOnDictory["data"]["myFoodRecordList"].count
+                    print("count\(count)")
+                    for index in 0...count-1 {
+                        let foodReviewsDatas =  JSOnDictory["data"]["myFoodRecordList"][index]
+                        let title = String(describing: foodReviewsDatas["foodName"])
+                        let photo = String(describing: foodReviewsDatas["foodPicture"])
+                        let rating = Int(String(describing: foodReviewsDatas["level"]))
+                        let desc = String(describing: foodReviewsDatas["foodIntro"])
+                        let userName = String(describing: foodReviewsDatas["userNickname"])
+                        print("title\(title)")
+                    }
+                }
+        }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

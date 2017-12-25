@@ -17,6 +17,7 @@ class FoodReviewTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadSampleFoods()
+        print("foodReviews\(foodReviews)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -67,8 +68,8 @@ class FoodReviewTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleFoods() {
-//        let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
-//
+        let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
+
 //        guard let foodReview1 = FoodReview( title: "Pork", photo: photo1, rating: 4, desc:"食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍食物介绍",userName: "huang") else {
 //            fatalError("Unable to instantiate meal1")
 //        }
@@ -81,15 +82,27 @@ class FoodReviewTableViewController: UITableViewController {
             .responseJSON { (response) in
                 if let json = response.result.value {
                     let JSOnDictory = JSON(json)
-//                    let count = JSOnDictory["data"]["foodRecordList"].count
-//                    print("count\(count)")
-                    let foodReviewsDatas =  JSOnDictory["data"]["foodRecordList"][0]
-                    let title = foodReviewsDatas["foodName"]
-                    let photo = foodReviewsDatas["foodPicture"]
-                    let rating = foodReviewsDatas["foodName"]
-                    let desc = foodReviewsDatas["foodName"]
-                    print("title\(title)")
-        
+                    let count = JSOnDictory["data"]["foodRecordList"].count
+                    //print("count\(count)")
+                    for index in 0...count-1 {
+                    let foodReviewsDatas =  JSOnDictory["data"]["foodRecordList"][index]
+                        let title = String(describing: foodReviewsDatas["foodName"])
+                        let photo = String(describing: foodReviewsDatas["foodPicture"])
+                        let rating = Int(String(describing: foodReviewsDatas["foodName"]))
+                        let desc = String(describing: foodReviewsDatas["foodName"])
+                        let userName = String(describing: foodReviewsDatas["userNickname"])
+                       // print("title\(title)")
+                        
+//                        foodReviews.append(FoodReview(title: title,photo: photo1,rating: 4,desc: desc, userName: userName))
+                        guard let foodReview1 = FoodReview( title: title, photo: photo1, rating: 4, desc:desc,userName: userName) else {
+                                        fatalError("Unable to instantiate meal1")
+                                    }
+                        
+                        self.foodReviews += [foodReview1]
+                        
+                    }
+                    print("foodReview\(self.foodReviews)")
+                    
 //                    a = foodReviewsDatas.
 //                    for foodReviewdata in foodReviewsDatas{
 //                        let title = foodReviewdata["foodName"]
@@ -110,6 +123,7 @@ class FoodReviewTableViewController: UITableViewController {
 //                let JSOnDictory = JSON(j)
 //                let translation =  JSOnDictory["data"]
         }
+        
     }
     
     
