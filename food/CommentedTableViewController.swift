@@ -12,6 +12,7 @@ import Alamofire
 
 class CommentedTableViewController: UITableViewController {
     
+    @IBOutlet var commentedTableView: UITableView!
     var commentedList = [commentFood]()
     
     func loadList(){
@@ -33,8 +34,16 @@ class CommentedTableViewController: UITableViewController {
                         let rating = Int(String(describing: foodReviewsDatas["level"]))
                         let desc = String(describing: foodReviewsDatas["foodIntro"])
                         let userName = String(describing: foodReviewsDatas["userNickname"])
-                        let comment = foodReviewsDatas["evaluationContent"]
+                        let comment = String(describing: foodReviewsDatas["evaluationContent"])
                         print("comment\(comment)")
+                        self.commentedList.append(commentFood(name: title , desc: desc, comment: comment,photo : photo1))
+                        
+                        DispatchQueue.main.async(execute: {
+                            
+                            self.commentedTableView.reloadData()
+                            
+                        })
+                        
                         
                         //                        foodReviews.append(FoodReview(title: title,photo: photo1,rating: 4,desc: desc, userName: userName))
                         

@@ -20,7 +20,7 @@ class signinViewController: UIViewController {
         }else if passwordText.text == ""{
             msgLabel.text = "密码不能为空"
         }else {
-            
+            self.performSegue(withIdentifier: "login", sender: self)
         }
         
     }

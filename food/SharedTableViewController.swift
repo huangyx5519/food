@@ -12,6 +12,7 @@ import Alamofire
 
 class SharedTableViewController: UITableViewController {
 
+    @IBOutlet var sharedTableView: UITableView!
     var sharedList = [sharedFood]()
     
     func loadList(){
@@ -33,6 +34,14 @@ class SharedTableViewController: UITableViewController {
                         let desc = String(describing: foodReviewsDatas["foodIntro"])
                         let userName = String(describing: foodReviewsDatas["userNickname"])
                         print("title\(title)")
+                        
+                        self.sharedList.append(sharedFood(name: title,desc: desc,photo: photo1))
+                        
+                        DispatchQueue.main.async(execute: {
+                            
+                            self.sharedTableView.reloadData()
+                            
+                        })
                     }
                 }
         }

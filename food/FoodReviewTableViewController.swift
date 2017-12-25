@@ -13,11 +13,19 @@ class FoodReviewTableViewController: UITableViewController {
     
     @IBOutlet var listTableView: UITableView!
     var foodReviews = [FoodReview]()
-
+    var activityIndicator:UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:
+            UIActivityIndicatorViewStyle.whiteLarge)
+        activityIndicator.center=self.view.center
+        
+        self.view.addSubview(activityIndicator);
         
         loadSampleFoods()
+    
         print("foodReviews\(foodReviews)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -78,8 +86,9 @@ class FoodReviewTableViewController: UITableViewController {
         
 //        let parameters: Parameters = ["lastFoodRecordId": "0"]
         //weak var weakSelf = self
-
-        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getOtherFoodRecord/?lastFoodRecordId=0", method: .get)
+        activityIndicator.startAnimating()
+        let ID = "0"
+        Alamofire.request("http://119.29.189.146:8080/foodTracker/foodRecord/getOtherFoodRecord/?lastFoodRecordId="+ID, method: .get)
             .responseJSON { (response) in
                 if let json = response.result.value {
                     let JSOnDictory = JSON(json)
@@ -94,8 +103,18 @@ class FoodReviewTableViewController: UITableViewController {
                         let userName = String(describing: foodReviewsDatas["userNickname"])
                        
                         let foodReview1 = FoodReview( title: title, photo: photo1, rating: 4, desc:desc,userName: userName)
+                        var image = photo1
+                        let url:NSURL = NSURL(string : photo)!
+                        do{
+                            let data:NSData = try NSData(contentsOf: url as URL)
+                            image = UIImage(data: data as Data)!
+                        }catch {
+                            print("gggggggg")
+                        }
+                        
+                        
                             
-                        self.foodReviews.append(FoodReview(title: title,photo: photo1,rating: 4,desc: desc, userName: userName)!)
+                        self.foodReviews.append(FoodReview(title: title,photo: image,rating: 4,desc: desc, userName: userName)!)
                                     }
                     
                     DispatchQueue.main.async(execute: {
@@ -103,6 +122,7 @@ class FoodReviewTableViewController: UITableViewController {
                         self.listTableView.reloadData()
                         
                     })
+                    self.activityIndicator.stopAnimating()
                         //weakSelf?.foodReviews += [foodReview1]
                 }
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bjb-Ch-3zF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fRU-K5-0Iq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -300,6 +300,7 @@
                         <outlet property="msgLabel" destination="U2f-By-qSz" id="9IH-ME-Ucb"/>
                         <outlet property="passwordText" destination="8nt-40-AUM" id="DnQ-UT-btk"/>
                         <outlet property="usernameText" destination="SQK-wg-ciI" id="pwS-yE-vSf"/>
+                        <segue destination="Bjb-Ch-3zF" kind="show" identifier="login" id="h6q-zt-ULU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbr-ly-86j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -862,6 +863,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的分享" id="dzd-M6-eL7"/>
+                    <connections>
+                        <outlet property="sharedTableView" destination="o1P-bw-NW1" id="m5T-x6-AOz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZc-9F-OH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -969,6 +973,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的评论" id="clP-jh-94R"/>
+                    <connections>
+                        <outlet property="commentedTableView" destination="63F-ku-AEf" id="5Io-6k-MIw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H68-dy-G8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
