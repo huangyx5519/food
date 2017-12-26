@@ -38,8 +38,16 @@ class SharedTableViewController: UITableViewController {
                         let userName = String(describing: foodReviewsDatas["userNickname"])
                         print("title\(title)")
                         
+                        var image = photo1
+                        let url:URL = URL(string : photo)!
+                        let data = try?Data(contentsOf: url)
+                        if let imageData = data{
+                            image = UIImage(data: imageData)
+                        }
+    
+            
 //                        self.sharedList.append(FoodReview(name: title,desc: desc,photo: photo1))
-                        self.sharedList.append(FoodReview(id: id, title: title, photo: photo1, rating: 4,desc: desc, userName: userName)!)
+                        self.sharedList.append(FoodReview(id: id, title: title, photo: image, rating: 4,desc: desc, userName: userName)!)
                         
                         
                         
@@ -188,6 +196,21 @@ class SharedTableViewController: UITableViewController {
         default:
             print("others")
             //            fatalError("Unexpected Segue Identifier")
+        }
+    }
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? CreatFoodReviewViewController, let foodReview = sourceViewController.foodReview {
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                sharedList[selectedIndexPath.row] = foodReview
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+//            let newIndexPath = IndexPath(row: sharedList.count, section: 0)
+//
+//            sharedList.append(foodReview)
+//            tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
 
