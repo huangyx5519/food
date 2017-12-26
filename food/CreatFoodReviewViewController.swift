@@ -17,7 +17,6 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
     //MARK: Properties
     
     @IBOutlet weak var titleText: UITextField!
-    //    @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var RatingControl: RatingControl!
     @IBOutlet weak var descText: UITextField!
@@ -58,15 +57,23 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         let userID = "1"
         
         //上传
-        let imageData = UIImagePNGRepresentation(photo!)!
+        let imageData = UIImagePNGRepresentation(photo!)
         
-        let httpHeaders:HTTPHeaders = ["Content-Type": "multipart/form-data",
-                           "boundary":"----WebKitFormBoundary7MA4YWxkTrZu0gW"]
+        let httpHeaders:HTTPHeaders = ["Content-Type": "multipart/form-data"]
 //        Alamofire.HTTPHeaders.merging(["Content-Type": "multipart/form-data",
 //                                       "boundary":"----WebKitFormBoundary7MA4YWxkTrZu0gW"])
+        
+//        var defaultHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+//        defaultHeaders["DNT"] = "1 (Do Not Track Enabled)"
+//
+//        let configuration = URLSessionConfiguration.default
+//        configuration.httpAdditionalHeaders = defaultHeaders
+//
+//        let sessionManager = Alamofire.SessionManager(configuration: configuration)
+        
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-                multipartFormData.append(imageData, withName: "foodPictureEntry")
+                multipartFormData.append(imageData!, withName: "foodPictureEntry")
                 multipartFormData.append(title.data(using: String.Encoding.utf8)!, withName: "foodName",fileName:"x.png",mimeType:"image/png")
                 multipartFormData.append(String(rating).data(using: String.Encoding.utf8)!, withName: "level")
                 multipartFormData.append(desc.data(using: String.Encoding.utf8)!, withName: "foodIntro")
@@ -88,14 +95,7 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         }
         )
         
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
-        //        meal = Meal(name: name, photo: photo, rating: rating)
-        
-//        foodReview = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName )
-        
-        //        guard let food1 = FoodReview(title: title, photo: photo, rating: rating, desc:desc,userName: userName ) else {
-        //            fatalError("Unable to instantiate meal1")
-        //        }
+        foodReview = FoodReview(id: "-1",title: title, photo: photo, rating: rating, desc:desc,userName: userName )
     }
     
     

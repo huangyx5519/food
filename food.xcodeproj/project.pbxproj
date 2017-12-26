@@ -21,6 +21,7 @@
 		58B492401FE010E800E08E14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B4923E1FE010E800E08E14 /* LaunchScreen.storyboard */; };
 		58B4924B1FE010E800E08E14 /* foodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4924A1FE010E800E08E14 /* foodTests.swift */; };
 		58B492561FE010E800E08E14 /* foodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B492551FE010E800E08E14 /* foodUITests.swift */; };
+		58D03FAE1FF1D039006FEFF0 /* ModifyFoodReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D03FAD1FF1D039006FEFF0 /* ModifyFoodReviewViewController.swift */; };
 		58D1CFF51FF099CC00FB8988 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E968871FF0987800E881D2 /* Alamofire.framework */; };
 		58D1CFF61FF099CC00FB8988 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58E968871FF0987800E881D2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58D1D0141FF0BAAB00FB8988 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D1D0071FF0BA9100FB8988 /* SwiftyJSON.framework */; };
@@ -205,6 +206,7 @@
 		58B492511FE010E800E08E14 /* foodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B492551FE010E800E08E14 /* foodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodUITests.swift; sourceTree = "<group>"; };
 		58B492571FE010E800E08E14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D03FAD1FF1D039006FEFF0 /* ModifyFoodReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyFoodReviewViewController.swift; sourceTree = "<group>"; };
 		58D1CFFB1FF0BA9000FB8988 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../../Downloads/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		58D1D0181FF0D77100FB8988 /* commentFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentFood.swift; sourceTree = "<group>"; };
 		58D1D01A1FF0E96E00FB8988 /* signinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signinViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				58E3F1F71FF00E4F00071464 /* sharedFood.swift */,
 				58B492371FE010E800E08E14 /* ViewController.swift */,
 				58B492391FE010E800E08E14 /* Main.storyboard */,
+				58D03FAD1FF1D039006FEFF0 /* ModifyFoodReviewViewController.swift */,
 				58D1D0181FF0D77100FB8988 /* commentFood.swift */,
 				58E3F1F91FF0176600071464 /* testTableViewCell.swift */,
 				5879FFD21FEF45860076B532 /* FoodReviewTableViewController.swift */,
@@ -602,6 +605,7 @@
 				585B8E731FEE1B4800589ED8 /* RatingControl.swift in Sources */,
 				586D4B841FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift in Sources */,
 				58E3F1FA1FF0176600071464 /* testTableViewCell.swift in Sources */,
+				58D03FAE1FF1D039006FEFF0 /* ModifyFoodReviewViewController.swift in Sources */,
 				58D1D0191FF0D77100FB8988 /* commentFood.swift in Sources */,
 				58E3F1F01FF0056E00071464 /* SharedTableViewController.swift in Sources */,
 				58B492381FE010E800E08E14 /* ViewController.swift in Sources */,
