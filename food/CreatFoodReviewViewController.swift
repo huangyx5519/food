@@ -59,10 +59,15 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         //上传
         let imageData = UIImagePNGRepresentation(photo!)
         
-        let httpHeaders:HTTPHeaders = ["Content-Type": "multipart/form-data"]
+        let httpHeaders = [
+            "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
+            "Content-Type": "multipart/form-data"
+        ]
+//        let httpHeaders:HTTPHeaders = ["Content-Type": "multipart/form-data"]
 //        Alamofire.HTTPHeaders.merging(["Content-Type": "multipart/form-data",
 //                                       "boundary":"----WebKitFormBoundary7MA4YWxkTrZu0gW"])
-        
+//        var headparams:NSMutableDictionary = NSMutableDictionary()
+//        headparams["Content-Type"]="multipart/form-data"
 //        var defaultHeaders = Alamofire.SessionManager.defaultHTTPHeaders
 //        defaultHeaders["DNT"] = "1 (Do Not Track Enabled)"
 //
@@ -79,7 +84,6 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
                 multipartFormData.append(desc.data(using: String.Encoding.utf8)!, withName: "foodIntro")
                 multipartFormData.append(userID.data(using: String.Encoding.utf8)!, withName: "id")
         },
-            
             to: "http://119.29.189.146:8080/foodTracker/foodRecord/newFoodRecord",
             headers:httpHeaders,
             encodingCompletion: { encodingResult in
