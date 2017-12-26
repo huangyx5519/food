@@ -13,7 +13,7 @@ import Alamofire
 class SharedTableViewController: UITableViewController {
 
     @IBOutlet var sharedTableView: UITableView!
-    var sharedList = [sharedFood]()
+    var sharedList = [FoodReview]()
     
     func loadList(){
         let photo1 = UIImage(named: "屏幕快照 2017-12-12 下午10.27.09")
@@ -30,6 +30,7 @@ class SharedTableViewController: UITableViewController {
                     if count > 0{
                     for index in 0...count-1 {
                         let foodReviewsDatas =  JSOnDictory["data"]["myFoodRecordList"][index]
+                        let id = String(describing: foodReviewsDatas["foodRecordId"])
                         let title = String(describing: foodReviewsDatas["foodName"])
                         let photo = String(describing: foodReviewsDatas["foodPicture"])
                         let rating = Int(String(describing: foodReviewsDatas["level"]))
@@ -37,7 +38,10 @@ class SharedTableViewController: UITableViewController {
                         let userName = String(describing: foodReviewsDatas["userNickname"])
                         print("title\(title)")
                         
-                        self.sharedList.append(sharedFood(name: title,desc: desc,photo: photo1))
+//                        self.sharedList.append(FoodReview(name: title,desc: desc,photo: photo1))
+                        self.sharedList.append(FoodReview(id: id, title: title, photo: photo1, rating: 4,desc: desc, userName: userName)!)
+                        
+                        
                         
                         DispatchQueue.main.async(execute: {
                             
@@ -89,7 +93,7 @@ class SharedTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let food = sharedList[indexPath.row]
         
-        cell.nameLabel.text = food.name
+        cell.nameLabel.text = food.title
         cell.descLabel.text = food.desc
         cell.foodImage.image = food.photo
         
@@ -164,11 +168,12 @@ class SharedTableViewController: UITableViewController {
 //            showFoodReviewViewController.foodReview = selectedFoodReview
             
         case "Modify":
+            print("intoModify")
             guard let creatFoodReviewViewController = segue.destination as? CreatFoodReviewViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             
-            guard let selectedFoodReviewCell = sender as? FoodReviewTableViewCell else {
+            guard let selectedFoodReviewCell = sender as? SharedTableViewCell else {
                 fatalError("Unexpected sender")
             }
             

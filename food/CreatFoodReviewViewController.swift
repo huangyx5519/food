@@ -14,6 +14,7 @@ import SwiftyJSON
 
 class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    var foodReview: FoodReview?
     //MARK: Properties
     
     @IBOutlet weak var titleText: UITextField!
@@ -22,12 +23,19 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
     @IBOutlet weak var descText: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var foodReview: FoodReview?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
+        if let foodReview = foodReview {
+            titleText.text = foodReview.title
+            RatingControl.rating = foodReview.rating
+            photoImageView.image = foodReview.photo
+            descText.text = foodReview.desc
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -37,7 +37,6 @@
 		58E3F1F21FF0058200071464 /* CommentedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F11FF0058200071464 /* CommentedTableViewController.swift */; };
 		58E3F1F41FF0059B00071464 /* SharedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F31FF0059B00071464 /* SharedTableViewCell.swift */; };
 		58E3F1F61FF005AD00071464 /* CommentedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F51FF005AD00071464 /* CommentedTableViewCell.swift */; };
-		58E3F1F81FF00E4F00071464 /* sharedFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F71FF00E4F00071464 /* sharedFood.swift */; };
 		58E3F1FA1FF0176600071464 /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E3F1F91FF0176600071464 /* testTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -219,7 +218,6 @@
 		58E3F1F11FF0058200071464 /* CommentedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentedTableViewController.swift; sourceTree = "<group>"; };
 		58E3F1F31FF0059B00071464 /* SharedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTableViewCell.swift; sourceTree = "<group>"; };
 		58E3F1F51FF005AD00071464 /* CommentedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentedTableViewCell.swift; sourceTree = "<group>"; };
-		58E3F1F71FF00E4F00071464 /* sharedFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sharedFood.swift; sourceTree = "<group>"; };
 		58E3F1F91FF0176600071464 /* testTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTableViewCell.swift; sourceTree = "<group>"; };
 		58E9687B1FF0987700E881D2 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,7 +277,6 @@
 				586D4B831FEF7FAE007C3F6D /* CreatFoodReviewViewController.swift */,
 				58B492351FE010E800E08E14 /* AppDelegate.swift */,
 				5879FFCE1FEF3D010076B532 /* FoodReview.swift */,
-				58E3F1F71FF00E4F00071464 /* sharedFood.swift */,
 				58B492371FE010E800E08E14 /* ViewController.swift */,
 				58B492391FE010E800E08E14 /* Main.storyboard */,
 				58D03FAD1FF1D039006FEFF0 /* ModifyFoodReviewViewController.swift */,
@@ -617,7 +614,6 @@
 				58E3F1E01FEFD0F100071464 /* Comment.swift in Sources */,
 				58E3F1DE1FEFCF8F00071464 /* CommentTableViewController.swift in Sources */,
 				58E3F1EE1FF0053800071464 /* settingViewController.swift in Sources */,
-				58E3F1F81FF00E4F00071464 /* sharedFood.swift in Sources */,
 				58E3F1DC1FEFCAFB00071464 /* CommentTableViewCell.swift in Sources */,
 				5879FFD11FEF3F510076B532 /* FoodReviewTableViewCell.swift in Sources */,
 				586D4B881FEFC64A007C3F6D /* CommentViewController.swift in Sources */,
