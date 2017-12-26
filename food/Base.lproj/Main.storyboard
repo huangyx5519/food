@@ -550,8 +550,8 @@
                                             <constraint firstAttribute="height" constant="44" id="pNL-OU-w1w"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVt-iK-elU">
-                                        <rect key="frame" x="273" y="544" width="86" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVt-iK-elU">
+                                        <rect key="frame" x="273" y="553" width="86" height="42"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="86" id="Jwa-6N-psM"/>
@@ -568,16 +568,16 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="oMj-cZ-g6b" secondAttribute="trailing" id="0ws-Em-DgQ"/>
                                     <constraint firstAttribute="bottom" secondItem="OVt-iK-elU" secondAttribute="bottom" constant="17" id="6CX-5T-1r9"/>
+                                    <constraint firstItem="oMj-cZ-g6b" firstAttribute="top" secondItem="KVG-dG-xJk" secondAttribute="bottom" constant="-1" id="6d9-OF-AID"/>
+                                    <constraint firstItem="skB-UQ-scl" firstAttribute="top" secondItem="KVG-dG-xJk" secondAttribute="bottom" constant="-59" id="Cmq-Ii-iqE"/>
                                     <constraint firstItem="skB-UQ-scl" firstAttribute="trailing" secondItem="OVt-iK-elU" secondAttribute="trailing" id="JOc-iD-vPA"/>
                                     <constraint firstAttribute="trailing" secondItem="skB-UQ-scl" secondAttribute="trailing" constant="16" id="Nw8-kK-5xe"/>
                                     <constraint firstAttribute="trailing" secondItem="KVG-dG-xJk" secondAttribute="trailing" constant="-8" id="VB2-AK-xKZ"/>
                                     <constraint firstItem="KVG-dG-xJk" firstAttribute="leading" secondItem="oMj-cZ-g6b" secondAttribute="leading" id="aNU-4s-shY"/>
                                     <constraint firstItem="oMj-cZ-g6b" firstAttribute="centerX" secondItem="OLe-48-imt" secondAttribute="centerX" id="epO-S4-5Dd"/>
                                     <constraint firstItem="KVG-dG-xJk" firstAttribute="leading" secondItem="OLe-48-imt" secondAttribute="leading" id="huA-c1-5gZ"/>
-                                    <constraint firstItem="OVt-iK-elU" firstAttribute="top" secondItem="OLe-48-imt" secondAttribute="top" constant="544" id="k64-kx-LUV"/>
                                     <constraint firstItem="KVG-dG-xJk" firstAttribute="top" secondItem="OLe-48-imt" secondAttribute="top" id="k9P-Sb-tUB"/>
-                                    <constraint firstItem="oMj-cZ-g6b" firstAttribute="top" secondItem="skB-UQ-scl" secondAttribute="bottom" constant="14" id="mzb-V3-XtK"/>
-                                    <constraint firstItem="skB-UQ-scl" firstAttribute="top" secondItem="OLe-48-imt" secondAttribute="top" constant="184" id="xYh-86-FPZ"/>
+                                    <constraint firstItem="OVt-iK-elU" firstAttribute="top" secondItem="oMj-cZ-g6b" secondAttribute="bottom" constant="19" id="nMr-SG-rP9"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
