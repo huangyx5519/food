@@ -141,5 +141,49 @@ class SharedTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+//        case "ShowDetail":
+//            guard let showFoodReviewViewController = segue.destination as? ShowFoodReviewViewController else {
+//                fatalError("Unexpected destination: \(segue.destination)")
+//            }
+//
+//            guard let selectedFoodReviewCell = sender as? FoodReviewTableViewCell else {
+//                fatalError("Unexpected sender")
+//            }
+//
+//            guard let indexPath = tableView.indexPath(for: selectedFoodReviewCell) else {
+//                fatalError("The selected cell is not being displayed by the table")
+//            }
+//
+//            let selectedFoodReview = sharedList[indexPath.row]
+//            showFoodReviewViewController.foodReview = selectedFoodReview
+            
+        case "Modify":
+            guard let creatFoodReviewViewController = segue.destination as? CreatFoodReviewViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedFoodReviewCell = sender as? FoodReviewTableViewCell else {
+                fatalError("Unexpected sender")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedFoodReviewCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedFoodReview = sharedList[indexPath.row]
+            creatFoodReviewViewController.foodReview = selectedFoodReview
+            
+            
+        default:
+            print("others")
+            //            fatalError("Unexpected Segue Identifier")
+        }
+    }
 
 }
