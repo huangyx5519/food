@@ -67,7 +67,7 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         //上传
         let imageData = UIImagePNGRepresentation(photo!)
         
-        let httpHeaders = [
+        let httpHeaders:HTTPHeaders = [
             "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
             "Content-Type": "multipart/form-data"
         ]
@@ -86,8 +86,8 @@ class CreatFoodReviewViewController: UIViewController,UITextFieldDelegate,UIImag
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-                multipartFormData.append(imageData!, withName: "foodPictureEntry")
-                multipartFormData.append(title.data(using: String.Encoding.utf8)!, withName: "foodName",fileName:"x.png",mimeType:"image/png")
+                multipartFormData.append(imageData!, withName: "foodPictureEntry",fileName:"x.png",mimeType:"image/png")
+                multipartFormData.append(title.data(using: String.Encoding.utf8)!, withName: "foodName")
                 multipartFormData.append(String(rating).data(using: String.Encoding.utf8)!, withName: "level")
                 multipartFormData.append(desc.data(using: String.Encoding.utf8)!, withName: "foodIntro")
                 multipartFormData.append(userID.data(using: String.Encoding.utf8)!, withName: "id")

@@ -110,11 +110,12 @@ class FoodReviewTableViewController: UITableViewController {
                             image = UIImage(data: imageData)
                         }
                         
+              
                         
                             
                         self.foodReviews.append(FoodReview(id: id,title: title,photo: image,rating: 4,desc: desc, userName: userName)!)
-                                    }
-                    
+                    }
+                 
                     DispatchQueue.main.async(execute: {
                         
                         self.listTableView.reloadData()
